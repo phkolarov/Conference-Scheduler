@@ -1,0 +1,8 @@
+You can define custom routes. In #default tag enter the name of route you want to change,
+in #custom tag enter your custom route.
+
+#default:"index" #custom:"";
+#default:"login" #custom:"nelogin";
+
+#default:"dsfsdf" #custom:"";
+#default:"" #custom:"";
