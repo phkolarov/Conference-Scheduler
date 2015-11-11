@@ -1,7 +1,7 @@
 <?php
+declare(strict_types=1);
 
 namespace views;
-declare(strict_types=1);
 
 class View
 {
@@ -49,6 +49,7 @@ class View
 
     private static function loadViewOnly(){
 
+        var_dump(self::$controllerName);
         require 'views'
             .DIRECTORY_SEPARATOR
             .self::$controllerName

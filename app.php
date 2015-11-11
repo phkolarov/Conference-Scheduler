@@ -1,8 +1,10 @@
 <?php
 
-declare(strict_types=1);
+
+include("controllers/BaseController.php");
+include("views/View.php");
+
 use controllers\BaseController;
-include_once('controllers\BaseController.php');
 
 class app
 {
@@ -14,23 +16,30 @@ class app
     public static $parameters;
 
 
-    public function __construct($uri){
+    // THe constructor explore URI to controller,action and parameters if exist and
+    //set it to ControllerSeeker hwo find the current controller;
 
+    public function __construct($uri){
 
         $this::$uri = $uri;
         $requestUri = explode("/", $uri);
 
             $controller =  array_shift($requestUri);
-            $this::$controller = ($controller == "index.php") ? "index" : $controller;
+            $this::$controller = ($controller == "index.php") ? "home" : $controller;
 
             $action = array_shift($requestUri);
             $this::$action = ($action == "") || ($action == null)? "index" : $action;
-
             $this::$parameters = $requestUri;
+
+
+
+        \views\View::$controllerName = self::$controller;
+        \views\View::$actionName = self::$action;
+
     }
 
         public function run(){
 
-            BaseController::controllerChecker(self::$controller,self::$action,self::$parameters);
+            BaseController::ControllerSeeker(self::$controller,self::$action,self::$parameters);
         }
 }

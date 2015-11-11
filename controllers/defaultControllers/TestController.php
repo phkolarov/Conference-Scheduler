@@ -1,26 +1,27 @@
 <?php
 
-declare(strict_types=1);
-
 namespace controllers\defaultControllers;
-
+use views\View;
 
 class TestController
 {
 
+    public function Index()
+    {
 
+        var_dump('TestIndexController');
+        return  View::make();
 
-    public function __construct(){
-
-        var_dump('tes1t');
     }
 
 
-//    /**
-//     * @Route("nest/nester")
-//     */
-    public function nest(){
+    public function Contact(){
+        var_dump("TestContactController");
 
-        var_dump('nester');
+        return  View::make();
+
     }
+
+
+
 }
