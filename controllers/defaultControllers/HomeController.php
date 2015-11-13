@@ -4,10 +4,19 @@
 namespace controllers\defaultControllers;
 use views\View;
 
+
 class HomeController
 {
 
 
+    /**
+     * @Admin
+     * @elena
+     * @Route(customController/customAction)
+     * @Authorize
+     * @Admin
+     * @GET
+     */
     public function Index()
     {
 
@@ -16,7 +25,10 @@ class HomeController
         var_dump('IndexController');
     }
 
-
+    /**
+     * @Authorize
+     * @GET
+     */
     public function Contact(){
 
 

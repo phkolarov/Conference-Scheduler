@@ -1,4 +1,6 @@
 <?php
+
+MainMenuHelper::generate();
 ?>
 
 

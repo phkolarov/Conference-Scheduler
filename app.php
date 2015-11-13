@@ -32,10 +32,6 @@ class app
             $this::$parameters = $requestUri;
 
 
-
-        \views\View::$controllerName = self::$controller;
-        \views\View::$actionName = self::$action;
-
     }
 
         public function run(){

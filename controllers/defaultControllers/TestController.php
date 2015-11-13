@@ -6,6 +6,13 @@ use views\View;
 class TestController
 {
 
+
+    /**
+     * @Route(customController/customAction)
+     * @Authorize
+     * @Admin
+     * @POST
+     */
     public function Index()
     {
 
@@ -13,6 +20,7 @@ class TestController
         return  View::make();
 
     }
+
 
 
     public function Contact(){
