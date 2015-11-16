@@ -22,7 +22,11 @@ class TestController
     }
 
 
-
+    /**
+     * @GET
+     * @Authorize
+     * @Admin
+     */
     public function Contact(){
         var_dump("TestContactController");
 

@@ -9,15 +9,7 @@ class HomeController
 {
 
 
-    /**
-     * @Admin
-     * @elena
-     * @Route(customController/customAction)
-     * @Authorize
-     * @Admin
-     * @GET
-     */
-    public function Index()
+       public function Index()
     {
 
         return View::make();

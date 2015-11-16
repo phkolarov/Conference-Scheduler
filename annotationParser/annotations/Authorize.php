@@ -21,7 +21,10 @@ class Authorize
         ];
 
         if(!isset($_COOKIE["session"])){
-            return $defaultParameters;
+            var_dump(11111111);
+
+            header("Location: /Conference-Scheduler/Home/Index");
+            die();
         }
     }
 

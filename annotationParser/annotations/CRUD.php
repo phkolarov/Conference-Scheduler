@@ -16,13 +16,15 @@ class CRUD
 
     public static function CRUDChecker( string $annotation){
 
+        $annotation = trim($annotation);
         $method = $_SERVER['REQUEST_METHOD'];
 
         if( in_array($annotation,self::$crudArrayString)){
 
+            var_dump($annotation);
+
             if($annotation != $method){
 
-                echo $annotation;
                 throw new \Exception("Invalid Request");
             }
         }

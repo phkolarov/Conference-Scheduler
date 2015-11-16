@@ -20,7 +20,7 @@ class CustomRouteController
        $action = strtolower($action);
 
 
-       $filePath = "config\\customRoutes.txt";
+       $filePath = "config\\customRoutes.json";
        $file = new \SplFileObject($filePath);
        $pattern  = '/#default controller\/action: ([A-Za-z]*)\/([A-Za-z]*); #custom controller\/action: ([A-Za-z]*)\/([A-Za-z]*);/';
 
@@ -42,7 +42,6 @@ class CustomRouteController
 
               if ($customController == $controller && $customAction == $action && $defaultController != "" && $defaultAction != "") {
 
-                  var_dump('1');
                   $returnCorrectParameters["controller"] = $defaultController;
                   $returnCorrectParameters["action"] = $defaultAction;
 

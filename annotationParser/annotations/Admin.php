@@ -12,4 +12,22 @@ namespace annotationParser\annotations;
 class Admin
 {
 
+
+    public static function checkAdminRole()
+    {
+
+        if(!isset($_COOKIE["role"])){
+
+
+
+            header("Location: Home/Index");
+            die();
+        }
+
+        if($_COOKIE["role"] != "admin"){
+
+            header("Location: Home/Index");
+            die();
+        }
+    }
 }

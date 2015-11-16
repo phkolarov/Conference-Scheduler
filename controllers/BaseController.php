@@ -33,7 +33,6 @@ class BaseController{
         $customRouteParameters = CustomRouteController::routeChecker($controller,$action);
 
 
-
         if(!$annotations && !empty($customRouteParameters)){
 
 
