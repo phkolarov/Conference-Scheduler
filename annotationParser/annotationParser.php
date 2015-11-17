@@ -11,10 +11,12 @@ namespace annotationParser;
 include_once("annotations\CRUD.php");
 include_once("annotations\Authorize.php");
 include_once("annotations\Admin.php");
+include_once("annotations\AnnotationRoute.php");
 
 use annotationParser\annotations\Admin;
 use annotationParser\annotations\Authorize;
 use annotationParser\annotations\CRUD;
+use annotationParser\annotations\AnnotationRoute;
 use \ReflectionException;
 
 class annotationParser
@@ -45,6 +47,15 @@ class annotationParser
             try {
                 $currentMethod = $reflection->getMethod($action);
                 $docBlock = $currentMethod->getDocComment();
+                $patternController = "/Route\(([A-Za-z]+)\/([A-Za-z]+)\)/";
+
+                preg_match($patternController,$docBlock,$haveRoute);
+
+                if(count($haveRoute) > 0){
+
+                    throw new \Exception("The current route it's have a custom");
+                }
+
                 $pattern = '/\* @(.*)\n/';
 
                 preg_match_all($pattern, $docBlock, $machedAnnotations);
@@ -59,6 +70,8 @@ class annotationParser
                     }
                 }
 
+                //AFTER GET ALL ANNOTATIONS SET IT ON ANNOTATION EXTRACTOR
+
                 self::annotationExtractor($annotationsArray);
 
 
@@ -71,38 +84,47 @@ class annotationParser
         } else if (!file_exists($defaultControllerPath . $controller . "Controller.php")) {
             //If file not exist
 
-            self::setRouteSettings($controller,$action);
-            echo "<br>";
+            self::timeSaver();
 
-            if (!isset($_COOKIE["timerSettt"])) {
-                $time2 = strtotime("+1 minutes");
+            $correctRoutesByAnnotationRoute = AnnotationRoute::loadRouter($controller,$action);
 
-                $_COOKIE["timerSettt"] = $time2;
-                setcookie("timerSettt", $time2);
+            $correctController = new $correctRoutesByAnnotationRoute["Controller"];
 
-                self::setRouteSettings($controller,$action);
-                self::loadRouteSettings();
+            $reflection = new \ReflectionClass($correctController);
 
-            } else {
+            $method = $reflection->getMethod($correctRoutesByAnnotationRoute["Action"]);
 
-                $time = strtotime('now');
-                $setedTime = (int)$_COOKIE["timerSettt"];
+            if($method){
 
-                if ($time > $setedTime) {
+               $docBlock = $method->getDocComment();
 
+                $patternController = "/Route\(([A-Za-z]+)\/([A-Za-z]+)\)/";
 
+                preg_match($patternController,$docBlock,$haveRoute);
 
+                $pattern = '/\* @(.*)\n/';
 
-                    $time = strtotime("+1 minutes");
+                preg_match_all($pattern, $docBlock, $machedAnnotations);
 
-                    $_COOKIE["timerSettt"] = $time;
-                    setcookie("timerSettt", $time);
+                if (isset($machedAnnotations[1])) {
 
+                    foreach ($machedAnnotations[1] as $item) {
 
-                    var_dump('maikooo');
+                        if (!in_array($item, $annotationsArray)) {
+                            $annotationsArray[] = $item;
+                        }
+                    }
                 }
 
+                //AFTER GET ALL ANNOTATIONS SET IT ON ANNOTATION EXTRACTOR
+
+                self::annotationExtractor($annotationsArray);
             }
+
+
+            var_dump($method);
+            echo "<br>";
+
 
 
         }
@@ -115,9 +137,10 @@ class annotationParser
     {
 
 
-        if (count($annotationArray) > 1) {
+        if (count($annotationArray) > 0) {
 
             foreach ($annotationArray as $item) {
+
 
                 $pattern = '/Route\([A-Za-z]+\/[A-Za-z]+\)/';
                 $item = trim($item);
@@ -125,17 +148,20 @@ class annotationParser
                 preg_match_all($pattern, $item, $matchRoute);
 
                 if (count($matchRoute) > 1) {
-
-                    var_dump($matchRoute);
-
                     throw new \Exception("This route have annotation please add correct route!!!");
                 } else {
 
+                    //CHECK REQUEST METHOD
                     CRUD::CRUDChecker($item);
 
+                    //CHECK FOR AUTHORIZE
                     if ($item == "Authorize") {
+
                         Authorize::checkForAuthorize();
+
+                    //CHECK FOR ADMIN ROLE
                     } else if ($item == "Admin") {
+
                         Admin::checkAdminRole();
                     }
 
@@ -146,85 +172,34 @@ class annotationParser
 
     }
 
-    private static function setRouteSettings($customController,$customAction){
+    private static function timeSaver(){
+        //!isset($_COOKIE["timerSettt"])
+        if (true) {
+            $time2 = strtotime("+1 minutes");
+            $_COOKIE["timerSettt"] = $time2;
+            setcookie("timerSettt", $time2);
 
+            AnnotationRoute::saveCorrectDataWithReflection();
 
-        $defaultControllerPath = "controllers\\defaultControllers\\";
+        } else {
 
-        $controllerFileNames = scandir($defaultControllerPath, 1);
+            $time = strtotime('now');
+            $setedTime = (int)$_COOKIE["timerSettt"];
 
+            if ($time > $setedTime) {
+                $time = strtotime("+1 minutes");
+                $_COOKIE["timerSettt"] = $time;
+                setcookie("timerSettt", $time);
 
-        foreach ($controllerFileNames as $item) {
-
-            $fileName = "controllers\\defaultControllers\\" . $item;
-
-            if(strpos($item,"Controller")){
-
-                $clasFileName = substr($fileName,0,-4);
-
-                require_once($fileName);
-
-                $currentClass = new $clasFileName;
-
-                $reflection = new \ReflectionClass($currentClass);
-                $methods = $reflection->getMethods();
-
-
-                foreach ($methods as $method) {
-
-                    $docBlock = $method->getDocComment();
-                    $pattern = "/Route\(([A-Za-z]+)\/([A-Za-z]+)\)/";
-
-                    preg_match($pattern,$docBlock,$routeMatch);
-
-                    if(count($routeMatch)> 0){
-
-
-
-                        echo '<pre>'; print_r($routeMatch); echo '</pre>';
-
-                    }
-
-                }
-
-
-
-
-
+                AnnotationRoute::saveCorrectDataWithReflection();
 
             }
 
-
         }
-//        echo '<pre>'; print_r($controllerFileNames[0]); echo '</pre>';
-
-
-
-
-
-
-        $routeObj = [];
-
-        $customRoutes = (object) array(
-            'controller' => "Home",
-            'action' => "Index",
-            'customController' => 'some',
-            'customAction' => 'somer'
-        );
-
-        array_push($routeObj,$customRoutes);
-        $fp = fopen('config/customRoutes.json', 'w');
-        fwrite($fp, json_encode($routeObj));
-        fclose($fp);
 
     }
 
-    private static  function loadRouteSettings(){
 
-
-
-
-    }
 
 
 

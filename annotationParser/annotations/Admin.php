@@ -26,7 +26,7 @@ class Admin
 
         if($_COOKIE["role"] != "admin"){
 
-            header("Location: Home/Index");
+            header("Location: /Conference-Scheduler/Home/Index");
             die();
         }
     }

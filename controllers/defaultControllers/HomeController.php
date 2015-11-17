@@ -18,6 +18,7 @@ class HomeController
     }
 
     /**
+     * @Route(customHome/customHomeAction)
      * @Authorize
      * @GET
      */

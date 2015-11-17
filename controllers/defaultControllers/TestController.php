@@ -8,10 +8,7 @@ class TestController
 
 
     /**
-     * @Route(customController/customAction)
-     * @Authorize
-     * @Admin
-     * @POST
+     * @Route(customTestHome/customTestAction)
      */
     public function Index()
     {
@@ -23,9 +20,8 @@ class TestController
 
 
     /**
+     * @Route(customTestContact/customTestAction)
      * @GET
-     * @Authorize
-     * @Admin
      */
     public function Contact(){
         var_dump("TestContactController");

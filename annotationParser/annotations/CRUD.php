@@ -16,6 +16,7 @@ class CRUD
 
     public static function CRUDChecker( string $annotation){
 
+        echo '<pre>'; print_r($annotation); echo '</pre>';
         $annotation = trim($annotation);
         $method = $_SERVER['REQUEST_METHOD'];
 
