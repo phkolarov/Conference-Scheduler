@@ -7,6 +7,7 @@
  */
 
 namespace controllers\defaultControllers;
+use views\View;
 
 
 class AnotherTestController
@@ -14,7 +15,7 @@ class AnotherTestController
 
 
     /**
-     * @Route(AnotherTEstCOntrollr/customAnotherAction)
+     * @Route(AnotherTestController/customAnotherAction)
      */
     public function Index()
     {

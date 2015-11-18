@@ -2,4 +2,4 @@
 
 ?>
 
-<h1>Contaxts</h1>
+<h1>Contacts</h1>

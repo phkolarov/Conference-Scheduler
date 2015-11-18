@@ -90,39 +90,54 @@ class annotationParser
 
             $correctController = new $correctRoutesByAnnotationRoute["Controller"];
 
-            $reflection = new \ReflectionClass($correctController);
+           try{
+               $reflection = new \ReflectionClass($correctController);
+               $reflectionClassName = $reflection->getName();
+               $patternToGetNameOfClass = '/[A-Za-z]+\\\[A-Za-z]+\\\([A-Za-z]+)/';
+               $correctControllerActionParameters = [];
+               $method = $reflection->getMethod($correctRoutesByAnnotationRoute["Action"]);
 
-            $method = $reflection->getMethod($correctRoutesByAnnotationRoute["Action"]);
+               preg_match($patternToGetNameOfClass,$reflectionClassName,$className);
 
-            if($method){
-
-               $docBlock = $method->getDocComment();
-
-                $patternController = "/Route\(([A-Za-z]+)\/([A-Za-z]+)\)/";
-
-                preg_match($patternController,$docBlock,$haveRoute);
-
-                $pattern = '/\* @(.*)\n/';
-
-                preg_match_all($pattern, $docBlock, $machedAnnotations);
-
-                if (isset($machedAnnotations[1])) {
-
-                    foreach ($machedAnnotations[1] as $item) {
-
-                        if (!in_array($item, $annotationsArray)) {
-                            $annotationsArray[] = $item;
-                        }
-                    }
-                }
-
-                //AFTER GET ALL ANNOTATIONS SET IT ON ANNOTATION EXTRACTOR
-
-                self::annotationExtractor($annotationsArray);
-            }
+               $className = str_replace("Controller", "", $className);
 
 
-            var_dump($method);
+               $correctControllerActionParameters["controller"] = $className[1];
+               $correctControllerActionParameters["action"] = $method->getName();
+
+               if($method){
+
+                   $docBlock = $method->getDocComment();
+
+                   $patternController = "/Route\(([A-Za-z]+)\/([A-Za-z]+)\)/";
+
+                   preg_match($patternController,$docBlock,$haveRoute);
+
+                   $pattern = '/\* @(.*)\n/';
+
+                   preg_match_all($pattern, $docBlock, $machedAnnotations);
+
+                   if (isset($machedAnnotations[1])) {
+
+                       foreach ($machedAnnotations[1] as $item) {
+
+                           if (!in_array($item, $annotationsArray)) {
+                               $annotationsArray[] = $item;
+                           }
+                       }
+                   }
+
+                   //AFTER GET ALL ANNOTATIONS SET IT ON ANNOTATION EXTRACTOR
+
+                   self::annotationExtractor($annotationsArray);
+
+                   return $correctControllerActionParameters;
+               }
+           }catch (ReflectionException $ex) {
+
+               throw new \Exception("This path is not correct!!!");
+           }
+
             echo "<br>";
 
 

@@ -23,13 +23,17 @@ class BaseController{
         //Annotation parser is check for any valid annotation and return correct controller and action if it's need it;
 
         $annotationParameters = annotationParser::CheckAnnotations($controller,$action);
+
         $annotations = false;
-        if(!empty($annotationParameters)){
+        if(count($annotationParameters)>0){
 
             $controller = $annotationParameters["controller"];
             $action = $annotationParameters["action"];
             $annotations = true;
+
         }
+
+
         $customRouteParameters = CustomRouteController::routeChecker($controller,$action);
 
 
@@ -51,6 +55,7 @@ class BaseController{
           spl_autoload_register(function($class){
 
 
+              var_dump($class);
               require_once($class.".php");
           });
 
