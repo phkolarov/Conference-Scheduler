@@ -13,6 +13,29 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+require_once("Autoloader/Autoloader.php");
+require('kint/Kint.class.php');
+use Autoloader\Autoloader;
+
+
+Autoloader::init();
+
+
+$dbName = "assss";
+
+\codeFirstModelBuilder\system::databaseBuilder($dbName);
+
+Core\Database::setInstance(
+    \Config\DatabaseConfig::DB_INSTANCE,
+    \Config\DatabaseConfig::DB_DRIVER,
+    \Config\DatabaseConfig::DB_USER,
+    \Config\DatabaseConfig::DB_PASS,
+    $dbName,
+    \Config\DatabaseConfig::DB_HOST
+);
+
+
+\codeFirstModelBuilder\system::createIdentityTables();
 
 include_once "app.php";
 
