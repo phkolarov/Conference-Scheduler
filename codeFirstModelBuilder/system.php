@@ -102,7 +102,7 @@ class system
             $result->execute();
 
 
-            //CREATE MANY TO MANY TABLE USER-ROLES
+            //CREATE USERSESSIONS TABLE
             $QueryUserSessionTable = "CREATE TABLE userSessions(Id int NOT NULL AUTO_INCREMENT,userId int NOT NULL, session int,loginDate datetime,PRIMARY KEY (Id))ENGINE=InnoDB;;";
             $result = $db->prepare($QueryUserSessionTable);
             $result->execute();

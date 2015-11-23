@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1130ef9-4575-4d8a-8a73-f8d087c864d0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeFirstModelBuilder/system.php" afterPath="$PROJECT_DIR$/codeFirstModelBuilder/system.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="Conference_Scheduler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,26 +87,26 @@
       <file leaf-file-name="system.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/codeFirstModelBuilder/system.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.5686274">
-              <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.4117647">
+              <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
               <folding>
                 <element signature="e#161#179#0#PHP" expanded="true" />
-                <marker date="1448289062406" expanded="true" signature="1033:1179" placeholder="CREATE TABLE..Users..." />
-                <marker date="1448289062406" expanded="true" signature="1210:1242" placeholder="ALTER TABLE Users..." />
-                <marker date="1448289062406" expanded="true" signature="1407:1443" placeholder="ALTER TABLE Users..." />
-                <marker date="1448289062406" expanded="true" signature="1612:1700" placeholder="INSERT INTO Roles..." />
-                <marker date="1448289062406" expanded="true" signature="1862:1951" placeholder="CREATE TABLE..Roles..." />
-                <marker date="1448289062406" expanded="true" signature="1862:1964" placeholder="CREATE TABLE..Roles..." />
-                <marker date="1448289062406" expanded="true" signature="2130:2182" placeholder="INSERT INTO roles..." />
-                <marker date="1448289062406" expanded="true" signature="2350:2398" placeholder="INSERT INTO roles..." />
-                <marker date="1448289062406" expanded="true" signature="2563:2612" placeholder="INSERT INTO roles..." />
-                <marker date="1448289062406" expanded="true" signature="2793:2886" placeholder="CREATE TABLE..userRole..." />
-                <marker date="1448289062406" expanded="true" signature="2793:2899" placeholder="CREATE TABLE..userRole..." />
-                <marker date="1448289062406" expanded="true" signature="3067:3163" placeholder="ALTER TABLE userRole..." />
-                <marker date="1448289062406" expanded="true" signature="3339:3435" placeholder="ALTER TABLE userRole..." />
-                <marker date="1448289062406" expanded="true" signature="3624:3672" placeholder="INSERT INTO userrole..." />
-                <marker date="1448289062406" expanded="true" signature="3870:4009" placeholder="CREATE TABLE..userSessions..." />
-                <marker date="1448289062406" expanded="true" signature="4180:4282" placeholder="ALTER TABLE userSessions..." />
+                <marker date="1448290052865" expanded="true" signature="1033:1179" placeholder="CREATE TABLE..Users..." />
+                <marker date="1448290052865" expanded="true" signature="1210:1242" placeholder="ALTER TABLE Users..." />
+                <marker date="1448290052865" expanded="true" signature="1407:1443" placeholder="ALTER TABLE Users..." />
+                <marker date="1448290052865" expanded="true" signature="1612:1700" placeholder="INSERT INTO Roles..." />
+                <marker date="1448290052865" expanded="true" signature="1862:1951" placeholder="CREATE TABLE..Roles..." />
+                <marker date="1448290052865" expanded="true" signature="1862:1964" placeholder="CREATE TABLE..Roles..." />
+                <marker date="1448290052865" expanded="true" signature="2130:2182" placeholder="INSERT INTO roles..." />
+                <marker date="1448290052865" expanded="true" signature="2350:2398" placeholder="INSERT INTO roles..." />
+                <marker date="1448290052865" expanded="true" signature="2563:2612" placeholder="INSERT INTO roles..." />
+                <marker date="1448290052865" expanded="true" signature="2793:2886" placeholder="CREATE TABLE..userRole..." />
+                <marker date="1448290052865" expanded="true" signature="2793:2899" placeholder="CREATE TABLE..userRole..." />
+                <marker date="1448290052865" expanded="true" signature="3067:3163" placeholder="ALTER TABLE userRole..." />
+                <marker date="1448290052865" expanded="true" signature="3339:3435" placeholder="ALTER TABLE userRole..." />
+                <marker date="1448290052865" expanded="true" signature="3624:3672" placeholder="INSERT INTO userrole..." />
+                <marker date="1448290052865" expanded="true" signature="3859:3998" placeholder="CREATE TABLE..userSessions..." />
+                <marker date="1448290052865" expanded="true" signature="4169:4271" placeholder="ALTER TABLE userSessions..." />
               </folding>
             </state>
           </provider>
@@ -824,26 +821,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/codeFirstModelBuilder/system.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.5686274">
-          <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.4117647">
+          <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
           <folding>
             <element signature="e#161#179#0#PHP" expanded="true" />
-            <marker date="1448289062406" expanded="true" signature="1033:1179" placeholder="CREATE TABLE..Users..." />
-            <marker date="1448289062406" expanded="true" signature="1210:1242" placeholder="ALTER TABLE Users..." />
-            <marker date="1448289062406" expanded="true" signature="1407:1443" placeholder="ALTER TABLE Users..." />
-            <marker date="1448289062406" expanded="true" signature="1612:1700" placeholder="INSERT INTO Roles..." />
-            <marker date="1448289062406" expanded="true" signature="1862:1951" placeholder="CREATE TABLE..Roles..." />
-            <marker date="1448289062406" expanded="true" signature="1862:1964" placeholder="CREATE TABLE..Roles..." />
-            <marker date="1448289062406" expanded="true" signature="2130:2182" placeholder="INSERT INTO roles..." />
-            <marker date="1448289062406" expanded="true" signature="2350:2398" placeholder="INSERT INTO roles..." />
-            <marker date="1448289062406" expanded="true" signature="2563:2612" placeholder="INSERT INTO roles..." />
-            <marker date="1448289062406" expanded="true" signature="2793:2886" placeholder="CREATE TABLE..userRole..." />
-            <marker date="1448289062406" expanded="true" signature="2793:2899" placeholder="CREATE TABLE..userRole..." />
-            <marker date="1448289062406" expanded="true" signature="3067:3163" placeholder="ALTER TABLE userRole..." />
-            <marker date="1448289062406" expanded="true" signature="3339:3435" placeholder="ALTER TABLE userRole..." />
-            <marker date="1448289062406" expanded="true" signature="3624:3672" placeholder="INSERT INTO userrole..." />
-            <marker date="1448289062406" expanded="true" signature="3870:4009" placeholder="CREATE TABLE..userSessions..." />
-            <marker date="1448289062406" expanded="true" signature="4180:4282" placeholder="ALTER TABLE userSessions..." />
+            <marker date="1448290052865" expanded="true" signature="1033:1179" placeholder="CREATE TABLE..Users..." />
+            <marker date="1448290052865" expanded="true" signature="1210:1242" placeholder="ALTER TABLE Users..." />
+            <marker date="1448290052865" expanded="true" signature="1407:1443" placeholder="ALTER TABLE Users..." />
+            <marker date="1448290052865" expanded="true" signature="1612:1700" placeholder="INSERT INTO Roles..." />
+            <marker date="1448290052865" expanded="true" signature="1862:1951" placeholder="CREATE TABLE..Roles..." />
+            <marker date="1448290052865" expanded="true" signature="1862:1964" placeholder="CREATE TABLE..Roles..." />
+            <marker date="1448290052865" expanded="true" signature="2130:2182" placeholder="INSERT INTO roles..." />
+            <marker date="1448290052865" expanded="true" signature="2350:2398" placeholder="INSERT INTO roles..." />
+            <marker date="1448290052865" expanded="true" signature="2563:2612" placeholder="INSERT INTO roles..." />
+            <marker date="1448290052865" expanded="true" signature="2793:2886" placeholder="CREATE TABLE..userRole..." />
+            <marker date="1448290052865" expanded="true" signature="2793:2899" placeholder="CREATE TABLE..userRole..." />
+            <marker date="1448290052865" expanded="true" signature="3067:3163" placeholder="ALTER TABLE userRole..." />
+            <marker date="1448290052865" expanded="true" signature="3339:3435" placeholder="ALTER TABLE userRole..." />
+            <marker date="1448290052865" expanded="true" signature="3624:3672" placeholder="INSERT INTO userrole..." />
+            <marker date="1448290052865" expanded="true" signature="3859:3998" placeholder="CREATE TABLE..userSessions..." />
+            <marker date="1448290052865" expanded="true" signature="4169:4271" placeholder="ALTER TABLE userSessions..." />
           </folding>
         </state>
       </provider>
