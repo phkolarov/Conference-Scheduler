@@ -21,7 +21,7 @@ use Autoloader\Autoloader;
 Autoloader::init();
 
 
-$dbName = "assss";
+$dbName = "SoftUniProject";
 
 \codeFirstModelBuilder\system::databaseBuilder($dbName);
 
