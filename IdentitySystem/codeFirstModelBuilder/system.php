@@ -6,7 +6,7 @@
  * Time: 7:52 PM
  */
 
-namespace codeFirstModelBuilder;
+namespace identitySystem\codeFirstModelBuilder;
 
 require_once("Core\\Database.php");
 use Core\Database;
@@ -31,7 +31,7 @@ class system
 
     }
 
-    public static function createIdentityTables()
+    public static function createidentityTables()
     {
         $db = Database::getInstance('app');
 
@@ -43,8 +43,8 @@ class system
 
         if (count($tableNames) <= 0) {
 
-            $queryUserTable = "CREATE TABLE Users(Id int NOT NULL AUTO_INCREMENT,Username varchar(255),Password varchar(255),Fullname varchar(255),PRIMARY KEY (Id))ENGINE=InnoDB;";
-            $queryIndex = "ALTER TABLE Users ADD INDEX (Id);";
+            $queryUserTable = "CREATE TABLE Users(id int NOT NULL AUTO_INCREMENT,username varchar(255),password varchar(255),fullname varchar(255),PRIMARY KEY (id))ENGINE=InnoDB;";
+            $queryIndex = "ALTER TABLE Users ADD INDEX (id);";
             $result = $db->prepare($queryUserTable);
             $result->execute();
 
@@ -55,13 +55,13 @@ class system
 
 
             //ADD ADMINISTRATOR USER
-            $queryAddAdministrator = "INSERT INTO users(Username,Password,Fullname) VALUES ('admin', 'admin', 'ADMINISTRATOR');";
+            $queryAddAdministrator = "INSERT INTO users(username,password,fullname) VALUES ('admin', 'admin', 'ADMINISTRATOR');";
             $result = $db->prepare($queryAddAdministrator);
             $result->execute();
 
 
             //CREATE TABLE ROLES
-            $queryRoleTable = "CREATE TABLE Roles(Id int NOT NULL AUTO_INCREMENT,Rolename varchar(255),PRIMARY KEY (Id))ENGINE=InnoDB;;";
+            $queryRoleTable = "CREATE TABLE Roles(id int NOT NULL AUTO_INCREMENT,Rolename varchar(255),PRIMARY KEY (id))ENGINE=InnoDB;;";
             $result = $db->prepare($queryRoleTable);
             $result->execute();
 
@@ -82,33 +82,33 @@ class system
 
 
             //CREATE MANY TO MANY TABLE USER-ROLES
-            $QueryUserRoleTable = "CREATE TABLE userRole(Id int NOT NULL AUTO_INCREMENT,userId int, roleId int,PRIMARY KEY (Id))ENGINE=InnoDB;;";
+            $QueryUserRoleTable = "CREATE TABLE userRole(id int NOT NULL AUTO_INCREMENT,userid int, roleid int,PRIMARY KEY (id))ENGINE=InnoDB;;";
             $result = $db->prepare($QueryUserRoleTable);
             $result->execute();
 
             //ADD FOREIGN KEY
-            $foreightKeyConstraintQuery = "ALTER TABLE userRole ADD CONSTRAINT FK_UserRoles_UserID FOREIGN KEY (userId)REFERENCES Users(Id);";
+            $foreightKeyConstraintQuery = "ALTER TABLE userRole ADD CONSTRAINT FK_UserRoles_Userid FOREIGN KEY (userid)REFERENCES Users(id);";
             $result = $db->prepare($foreightKeyConstraintQuery);
             $result->execute();
 
             //ADD FOREIGN KEY
-            $foreightKeyConstraintQuery2 = "ALTER TABLE userRole ADD CONSTRAINT FK_UserRoles_RoleID FOREIGN KEY (roleId)REFERENCES Roles(Id);";
+            $foreightKeyConstraintQuery2 = "ALTER TABLE userRole ADD CONSTRAINT FK_UserRoles_Roleid FOREIGN KEY (roleid)REFERENCES Roles(id);";
             $result = $db->prepare($foreightKeyConstraintQuery2);
             $result->execute();
 
             //ADD ADMINISTRATOR ROLE
-            $queryAddAdministratorToAdminRole = "INSERT INTO userrole(userId,roleId) VALUES (1,1);";
+            $queryAddAdministratorToAdminRole = "INSERT INTO userrole(userid,roleid) VALUES (1,1);";
             $result = $db->prepare($queryAddAdministratorToAdminRole);
             $result->execute();
 
 
             //CREATE USERSESSIONS TABLE
-            $QueryUserSessionTable = "CREATE TABLE userSessions(Id int NOT NULL AUTO_INCREMENT,userId int NOT NULL, session int,loginDate datetime,PRIMARY KEY (Id))ENGINE=InnoDB;;";
+            $QueryUserSessionTable = "CREATE TABLE userSessions(id int NOT NULL AUTO_INCREMENT,userid int NOT NULL, session int,loginDate datetime,PRIMARY KEY (id))ENGINE=InnoDB;;";
             $result = $db->prepare($QueryUserSessionTable);
             $result->execute();
 
             //ADD FOREIGN KEY
-            $foreightKeyConstraintQuery = "ALTER TABLE userSessions ADD CONSTRAINT FK_UserSession_UserID FOREIGN KEY (userId)REFERENCES Users(Id);";
+            $foreightKeyConstraintQuery = "ALTER TABLE userSessions ADD CONSTRAINT FK_UserSession_Userid FOREIGN KEY (userid)REFERENCES Users(id);";
             $result = $db->prepare($foreightKeyConstraintQuery);
             $result->execute();
 
