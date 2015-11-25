@@ -17,13 +17,12 @@ class HomeController
 
             $session = new \IdentitySystem\IdentityRepository\IdentitySessionRepository();
 
-               $sessions=  $session->findAll();
+               $sessions =  $session->findAll();
 
-            //d($session->filterById(1)->delete());
 
 
             $registeredUserInfo = $user->UserLogin('admin','admin');
-
+            $user->UserLogout('admin');
 
 
         return View::make();

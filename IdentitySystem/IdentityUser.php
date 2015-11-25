@@ -73,7 +73,7 @@ class IdentityUser // implements iUser
 
             $generateSessionRow = new \IdentitySystem\IdentityRepository\IdentitySessionRepository();
 
-            d($registeredUser);
+
             $session = new \IdentitySystem\IdentityModels\IdentitySessionModel( $registeredUser->getId(),$generatedSession);
 
 
@@ -96,9 +96,14 @@ class IdentityUser // implements iUser
         $arrayResult = [];
 
         $userRepo = new \IdentitySystem\IdentityRepository\IdentityUserRepository();
+        $sessionRepo = new\IdentitySystem\IdentityRepository\IdentitySessionRepository();
 
         $registeredUser = $userRepo->filterByUsername($username)->findOne();
+        d($registeredUser);
 
+        $userSessions = $sessionRepo->filterByUserId($registeredUser->getId())->delete();
+
+        d($userSessions);
 
     }
 

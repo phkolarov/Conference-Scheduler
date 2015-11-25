@@ -264,7 +264,7 @@ class IdentitySessionRepository
     {
         $db = Database::getInstance('app');
 
-        $query = "UPDATE usersessions SET userId= :userId, session= :session, loginDate= :loginDate WHERE id = :id";
+        $query = "UPDATE usersessions SET userId= :userid, session= :session, loginDate= :loginDate WHERE id = :id";
         $result = $db->prepare($query);
         $result->execute(
             [
@@ -276,17 +276,17 @@ class IdentitySessionRepository
         );
     }
 
-    private static function insert(IdentityUserModel $model)
+    private static function insert(IdentitySessionModel $model)
     {
         $db = Database::getInstance('app');
 
-        $query = "INSERT INTO usersessions (userId,sessionU,loginDate) VALUES (:userId, :sessionU, :loginDate);";
+        $query = "INSERT INTO usersessions (userid,session,loginDate) VALUES (:userid, :session, :loginDate);";
         $result = $db->prepare($query);
 
         $result->execute(
             [
                 ':userid' => $model->getUserId(),
-                ':sessionU' => $model->getSession(),
+                ':session' => $model->getSession(),
                 ':loginDate' => $model->getLoginDate()
             ]
         );

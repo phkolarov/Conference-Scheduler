@@ -75,7 +75,6 @@ class IdentitySessionModel
     public function setLoginDate(){
 
         $date = date("Y-m-d H:i:s");
-        d($date);
         $this->logindate = $date ;
 
         return $this;
