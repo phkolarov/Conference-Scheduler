@@ -9,6 +9,7 @@
 namespace identitySystem\codeFirstModelBuilder;
 
 require_once("Core\\Database.php");
+
 use Core\Database;
 use PDO;
 

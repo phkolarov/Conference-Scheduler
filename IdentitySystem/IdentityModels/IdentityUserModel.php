@@ -47,7 +47,6 @@ class IdentityUserModel
     }
 
     public function getUsername(){
-
         return $this->username;
     }
 
@@ -58,7 +57,7 @@ class IdentityUserModel
         return $this;
     }
 
-    public function getPass(){
+    public function getPassword(){
         return $this->password;
     }
 
@@ -69,7 +68,7 @@ class IdentityUserModel
         return $this;
 
     }
-    public function fullname(){
+    public function getFullname(){
 
         return $this->fullname;
     }

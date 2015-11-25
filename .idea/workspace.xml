@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1130ef9-4575-4d8a-8a73-f8d087c864d0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IdentitySystem/ApplicationUserManager.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IdentitySystem/IdentityModels/IdentityUserModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentitUserRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IdentitySystem/IdentityUser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IdentitySystem/iUser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/AccountController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/codeFirstModelBuilder/system.php" afterPath="$PROJECT_DIR$/IdentitySystem/codeFirstModelBuilder/system.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Collections/BuildingCollection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Collections/UserCollection.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IdentitySystem/IdentityModels/IdentitySessionModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentitySessionRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentityUserRepository.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentitUserRepository.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Autoloader/Autoloader.php" afterPath="$PROJECT_DIR$/Autoloader/Autoloader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IdentitySystem/ApplicationUserManager.php" afterPath="$PROJECT_DIR$/IdentitySystem/ApplicationUserManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IdentitySystem/IdentityModels/IdentityUserModel.php" afterPath="$PROJECT_DIR$/IdentitySystem/IdentityModels/IdentityUserModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IdentitySystem/IdentityUser.php" afterPath="$PROJECT_DIR$/IdentitySystem/IdentityUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IdentitySystem/codeFirstModelBuilder/system.php" afterPath="$PROJECT_DIR$/IdentitySystem/codeFirstModelBuilder/system.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/BaseController.php" afterPath="$PROJECT_DIR$/controllers/BaseController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/defaultControllers/HomeController.php" afterPath="$PROJECT_DIR$/controllers/defaultControllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="Conference_Scheduler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,32 +40,8 @@
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/defaultControllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384">
-              <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-              <folding>
-                <element signature="e#50#65#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.846153">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding>
-                <element signature="e#505#531#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationUserManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/IdentitySystem/ApplicationUserManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="29" selection-end-column="0" />
+            <state vertical-scroll-proportion="-23.538462">
+              <caret line="36" column="7" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -70,34 +50,95 @@
       <file leaf-file-name="IdentityUser.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.846153">
-              <caret line="43" column="68" selection-start-line="43" selection-start-column="68" selection-end-line="43" selection-end-column="68" />
+            <state vertical-scroll-proportion="-8.035714">
+              <caret line="76" column="103" selection-start-line="76" selection-start-column="103" selection-end-line="76" selection-end-column="103" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.php">
+      <file leaf-file-name="IdentitySessionModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityModels/IdentitySessionModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846">
-              <caret line="4" column="10" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="10" />
+            <state vertical-scroll-proportion="-19.923077">
+              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IdentitUserRepository.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentitUserRepository.php">
+      <file leaf-file-name="Database.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Core/Database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26681614">
-              <caret line="148" column="7" selection-start-line="148" selection-start-column="7" selection-end-line="148" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.5807175">
+              <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IdentitySessionRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentitySessionRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.0">
+              <caret line="281" column="0" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+              <folding>
+                <element signature="e#142#197#0#PHP" expanded="true" />
+                <marker date="1448463055953" expanded="true" signature="3719:3744" placeholder="SELECT * FRO..users$..." />
+                <marker date="1448463055953" expanded="true" signature="3719:3745" placeholder="SELECT * FRO..usersessions$..." />
+                <marker date="1448463055953" expanded="true" signature="4507:4576" placeholder="SELECT * FRO..users$..." />
+                <marker date="1448463055953" expanded="true" signature="5153:5176" placeholder="DELETE FROM ..." />
+                <marker date="1448463055953" expanded="true" signature="5153:5177" placeholder="DELETE FROM ..." />
+                <marker date="1448463055953" expanded="true" signature="5960:6056" placeholder="UPDATE users..." />
+                <marker date="1448463055953" expanded="true" signature="6500:6592" placeholder="INSERT INTO users..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserCollection.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Collections/UserCollection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuildingCollection.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Collections/BuildingCollection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.423077">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IdentityUserRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentityUserRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="10.545455">
+              <caret line="197" column="60" selection-start-line="197" selection-start-column="7" selection-end-line="197" selection-end-column="60" />
               <folding>
                 <element signature="e#140#187#0#PHP" expanded="true" />
-                <marker date="1448373516468" expanded="true" signature="3181:3200" placeholder="SELECT * FRO..users$..." />
-                <marker date="1448373516468" expanded="true" signature="3880:3942" placeholder="SELECT * fro..users$..." />
-                <marker date="1448373516468" expanded="true" signature="4473:4490" placeholder="DELETE FROM ..." />
+                <marker date="1448460585763" expanded="true" signature="3791:3810" placeholder="SELECT * FRO..users$..." />
+                <marker date="1448460585763" expanded="true" signature="4570:4632" placeholder="SELECT * FRO..users$..." />
+                <marker date="1448460585763" expanded="true" signature="5198:5215" placeholder="DELETE FROM ..." />
+                <marker date="1448460585763" expanded="true" signature="5992:6085" placeholder="UPDATE users..." />
+                <marker date="1448460585763" expanded="true" signature="6533:6620" placeholder="INSERT INTO users..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationUserManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IdentitySystem/ApplicationUserManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.307692">
+              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,18 +146,8 @@
       <file leaf-file-name="IdentityUserModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityModels/IdentityUserModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.730769">
-              <caret line="26" column="67" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/BaseController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.730769">
-              <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+            <state vertical-scroll-proportion="-6.7636366">
+              <caret line="52" column="31" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -147,7 +178,6 @@
         <option value="$PROJECT_DIR$/controllers/defaultControllers/TestController.php" />
         <option value="$PROJECT_DIR$/annotationParser/annotationParser.php" />
         <option value="$PROJECT_DIR$/views/Test/contact.php" />
-        <option value="$PROJECT_DIR$/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/views/AnotherTest/index.php" />
         <option value="$PROJECT_DIR$/config/customRoutes.json" />
         <option value="$PROJECT_DIR$/controllers/defaultControllers/AnotherTestController.php" />
@@ -159,13 +189,21 @@
         <option value="$PROJECT_DIR$/controllers/AccountController.php" />
         <option value="$PROJECT_DIR$/IdentitySystem/Identity.php" />
         <option value="$PROJECT_DIR$/IdentitySystem/iUser.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/controllers/defaultControllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/IdentitySystem/IdentityModels/IdentityUserModel.php" />
-        <option value="$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentitUserRepository.php" />
-        <option value="$PROJECT_DIR$/IdentitySystem/codeFirstModelBuilder/system.php" />
         <option value="$PROJECT_DIR$/IdentitySystem/ApplicationUserManager.php" />
+        <option value="$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentitUserRepository.php" />
+        <option value="$PROJECT_DIR$/controllers/BaseController.php" />
+        <option value="$PROJECT_DIR$/IdentitySystem/codeFirstModelBuilder/system.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/IdentitySystem/IdentityModels/IdentityUserModel.php" />
+        <option value="$PROJECT_DIR$/Autoloader/Autoloader.php" />
+        <option value="$PROJECT_DIR$/Collections/UserCollection.php" />
+        <option value="$PROJECT_DIR$/Collections/BuildingCollection.php" />
+        <option value="$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentityUserRepository.php" />
+        <option value="$PROJECT_DIR$/controllers/defaultControllers/HomeController.php" />
         <option value="$PROJECT_DIR$/IdentitySystem/IdentityUser.php" />
+        <option value="$PROJECT_DIR$/IdentitySystem/IdentityModels/IdentitySessionModel.php" />
+        <option value="$PROJECT_DIR$/Core/Database.php" />
+        <option value="$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentitySessionRepository.php" />
       </list>
     </option>
   </component>
@@ -177,7 +215,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -209,7 +247,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -306,6 +343,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conference-Scheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conference-Scheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -342,29 +393,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conference-Scheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conference-Scheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Collections" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conference-Scheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conference-Scheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Autoloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/SoftUni-ORMLab-master" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Bitnami\wampstack-7.0.0RC6-0\apache2\htdocs\Conference-Scheduler\IdentitySystem" />
-      <recent name="C:\Bitnami\wampstack-7.0.0RC6-0\apache2\htdocs\Conference_Scheduler\controllers" />
-      <recent name="C:\Bitnami\wampstack-7.0.0RC6-0\apache2\htdocs\Conference_Scheduler\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Bitnami\wampstack-7.0.0RC6-0\apache2\htdocs\Conference-Scheduler" />
       <recent name="C:\Bitnami\wampstack-7.0.0RC6-0\apache2\htdocs\Conference-Scheduler\views\AnotherTest" />
       <recent name="C:\Bitnami\wampstack-7.0.0RC6-0\apache2\htdocs\Conference_Scheduler\controllers\defaultControllers" />
       <recent name="C:\Bitnami\wampstack-7.0.0RC6-0\apache2\htdocs\Conference_Scheduler\views\Test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Bitnami\wampstack-7.0.0RC6-0\apache2\htdocs\Conference-Scheduler\IdentitySystem" />
+      <recent name="C:\Bitnami\wampstack-7.0.0RC6-0\apache2\htdocs\Conference_Scheduler\controllers" />
+      <recent name="C:\Bitnami\wampstack-7.0.0RC6-0\apache2\htdocs\Conference_Scheduler\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -414,7 +494,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23072916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21407625" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -442,7 +522,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16197917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -470,44 +550,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/defaultControllers/TestController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/defaultControllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#50#65#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/annotationParser/annotationParser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -540,9 +582,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding>
-            <element signature="e#50#65#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -599,9 +639,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#50#65#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -696,13 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/defaultControllers/TestController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1361556">
-          <caret line="7" column="0" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/defaultControllers/AnotherTestController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09725401">
@@ -729,15 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.019058296">
-          <caret line="61" column="3" selection-start-line="61" selection-start-column="3" selection-end-line="61" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,15 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34304932">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IdentitySystem/iUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -773,27 +786,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.846153">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="e#505#531#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769">
-          <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846">
+        <state vertical-scroll-proportion="0.0">
           <caret line="4" column="10" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="10" />
           <folding />
         </state>
@@ -807,75 +802,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/defaultControllers/HomeController.php">
+    <entry file="file://$PROJECT_DIR$/IdentitySystem/iUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
-          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding>
-            <element signature="e#50#65#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.28587443">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IdentitySystem/codeFirstModelBuilder/system.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6946108">
-          <caret line="110" column="144" selection-start-line="110" selection-start-column="144" selection-end-line="110" selection-end-column="144" />
+        <state vertical-scroll-proportion="-0.019058296">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="42" />
           <folding>
-            <element signature="e#176#194#0#PHP" expanded="true" />
-            <marker date="1448373577109" expanded="true" signature="1048:1194" placeholder="CREATE TABLE..Users..." />
-            <marker date="1448373577109" expanded="true" signature="1225:1257" placeholder="ALTER TABLE Users..." />
-            <marker date="1448373577109" expanded="true" signature="1422:1458" placeholder="ALTER TABLE Users..." />
-            <marker date="1448373577109" expanded="true" signature="1627:1715" placeholder="INSERT INTO users..." />
-            <marker date="1448373577109" expanded="true" signature="1877:1979" placeholder="CREATE TABLE..Roles..." />
-            <marker date="1448373577109" expanded="true" signature="2145:2197" placeholder="INSERT INTO roles..." />
-            <marker date="1448373577109" expanded="true" signature="2365:2413" placeholder="INSERT INTO roles..." />
-            <marker date="1448373577109" expanded="true" signature="2578:2627" placeholder="INSERT INTO roles..." />
-            <marker date="1448373577109" expanded="true" signature="2808:2914" placeholder="CREATE TABLE..userRole..." />
-            <marker date="1448373577109" expanded="true" signature="3082:3178" placeholder="ALTER TABLE userRole..." />
-            <marker date="1448373577109" expanded="true" signature="3354:3450" placeholder="ALTER TABLE userRole..." />
-            <marker date="1448373577109" expanded="true" signature="3639:3687" placeholder="INSERT INTO userrole..." />
-            <marker date="1448373577109" expanded="true" signature="3874:4013" placeholder="CREATE TABLE..userSessions..." />
-            <marker date="1448373577109" expanded="true" signature="4184:4286" placeholder="ALTER TABLE userSessions..." />
-            <marker date="1448373577109" expanded="true" signature="4284:4286" placeholder="ALTER TABLE userSessions..." />
+            <element signature="e#177#195#0#PHP" expanded="true" />
+            <marker date="1448440074546" expanded="true" signature="1049:1195" placeholder="CREATE TABLE..Users..." />
+            <marker date="1448440074546" expanded="true" signature="1226:1258" placeholder="ALTER TABLE Users..." />
+            <marker date="1448440074546" expanded="true" signature="1423:1459" placeholder="ALTER TABLE Users..." />
+            <marker date="1448440074546" expanded="true" signature="1628:1716" placeholder="INSERT INTO users..." />
+            <marker date="1448440074546" expanded="true" signature="1878:1980" placeholder="CREATE TABLE..Roles..." />
+            <marker date="1448440074546" expanded="true" signature="2146:2198" placeholder="INSERT INTO roles..." />
+            <marker date="1448440074546" expanded="true" signature="2366:2414" placeholder="INSERT INTO roles..." />
+            <marker date="1448440074546" expanded="true" signature="2579:2628" placeholder="INSERT INTO roles..." />
+            <marker date="1448440074546" expanded="true" signature="2809:2915" placeholder="CREATE TABLE..userRole..." />
+            <marker date="1448440074546" expanded="true" signature="3083:3179" placeholder="ALTER TABLE userRole..." />
+            <marker date="1448440074546" expanded="true" signature="3355:3451" placeholder="ALTER TABLE userRole..." />
+            <marker date="1448440074546" expanded="true" signature="3640:3688" placeholder="INSERT INTO userrole..." />
+            <marker date="1448440074546" expanded="true" signature="3875:4014" placeholder="CREATE TABLE..userSessions..." />
+            <marker date="1448440074546" expanded="true" signature="4185:4287" placeholder="ALTER TABLE userSessions..." />
+            <marker date="1448440074546" expanded="true" signature="4285:4287" placeholder="ALTER TABLE userSessions..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1905298">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/defaultControllers/TestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19058296">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Autoloader/Autoloader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17152466">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67600894">
+          <caret line="37" column="62" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="62" />
+          <folding>
+            <element signature="e#505#531#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IdentitySystem/ApplicationUserManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.846153">
-          <caret line="43" column="68" selection-start-line="43" selection-start-column="68" selection-end-line="43" selection-end-column="68" />
+        <state vertical-scroll-proportion="-18.307692">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityModels/IdentityUserModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769">
-          <caret line="26" column="67" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="67" />
+        <state vertical-scroll-proportion="-6.7636366">
+          <caret line="52" column="31" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentitUserRepository.php">
+    <entry file="file://$PROJECT_DIR$/Collections/BuildingCollection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26681614">
-          <caret line="148" column="7" selection-start-line="148" selection-start-column="7" selection-end-line="148" selection-end-column="7" />
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentityUserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.545455">
+          <caret line="197" column="60" selection-start-line="197" selection-start-column="7" selection-end-line="197" selection-end-column="60" />
           <folding>
             <element signature="e#140#187#0#PHP" expanded="true" />
-            <marker date="1448373516468" expanded="true" signature="3181:3200" placeholder="SELECT * FRO..users$..." />
-            <marker date="1448373516468" expanded="true" signature="3880:3942" placeholder="SELECT * fro..users$..." />
-            <marker date="1448373516468" expanded="true" signature="4473:4490" placeholder="DELETE FROM ..." />
+            <marker date="1448460585763" expanded="true" signature="3791:3810" placeholder="SELECT * FRO..users$..." />
+            <marker date="1448460585763" expanded="true" signature="4570:4632" placeholder="SELECT * FRO..users$..." />
+            <marker date="1448460585763" expanded="true" signature="5198:5215" placeholder="DELETE FROM ..." />
+            <marker date="1448460585763" expanded="true" signature="5992:6085" placeholder="UPDATE users..." />
+            <marker date="1448460585763" expanded="true" signature="6533:6620" placeholder="INSERT INTO users..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/defaultControllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.538462">
+          <caret line="36" column="7" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.035714">
+          <caret line="76" column="103" selection-start-line="76" selection-start-column="103" selection-end-line="76" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Collections/UserCollection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityModels/IdentitySessionModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.923077">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IdentitySystem/IdentityRepository/IdentitySessionRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.0">
+          <caret line="281" column="0" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+          <folding>
+            <element signature="e#142#197#0#PHP" expanded="true" />
+            <marker date="1448463055953" expanded="true" signature="3719:3744" placeholder="SELECT * FRO..users$..." />
+            <marker date="1448463055953" expanded="true" signature="3719:3745" placeholder="SELECT * FRO..usersessions$..." />
+            <marker date="1448463055953" expanded="true" signature="4507:4576" placeholder="SELECT * FRO..users$..." />
+            <marker date="1448463055953" expanded="true" signature="5153:5176" placeholder="DELETE FROM ..." />
+            <marker date="1448463055953" expanded="true" signature="5153:5177" placeholder="DELETE FROM ..." />
+            <marker date="1448463055953" expanded="true" signature="5960:6056" placeholder="UPDATE users..." />
+            <marker date="1448463055953" expanded="true" signature="6500:6592" placeholder="INSERT INTO users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5807175">
+          <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

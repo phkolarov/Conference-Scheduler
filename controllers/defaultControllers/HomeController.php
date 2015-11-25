@@ -3,7 +3,7 @@
 
 namespace controllers\defaultControllers;
 use views\View;
-use IdentitySystem\IdentityRepository\IdentitUserRepository;
+
 
 class HomeController
 {
@@ -11,10 +11,20 @@ class HomeController
 
        public function Index()
     {
-        $user = new IdentitUserRepository();
-        $user = $user->findOne();
 
-        d($user);
+            $user = new \IdentitySystem\IdentityUser();
+
+
+            $session = new \IdentitySystem\IdentityRepository\IdentitySessionRepository();
+
+               $sessions=  $session->findAll();
+
+            //d($session->filterById(1)->delete());
+
+
+            $registeredUserInfo = $user->UserLogin('admin','admin');
+
+
 
         return View::make();
 

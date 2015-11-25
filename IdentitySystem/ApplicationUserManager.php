@@ -32,5 +32,4 @@ class ApplicationUserManager
 
         return $this->userAccount;
     }
-
 }
