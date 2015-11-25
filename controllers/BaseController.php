@@ -50,13 +50,13 @@ class BaseController{
 
       if(file_exists($controllerPath. ".php")){
 
-
-
           spl_autoload_register(function($class){
 
+              if(file_exists($class. ".php")){
 
-              var_dump($class);
-              require_once($class.".php");
+                  require_once($class.".php");
+              }
+
           });
 
           \views\View::$controllerName =$controller;

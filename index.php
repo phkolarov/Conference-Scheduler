@@ -16,14 +16,14 @@ error_reporting(E_ALL);
 require_once("Autoloader/Autoloader.php");
 require('kint/Kint.class.php');
 use Autoloader\Autoloader;
-
+use IdentitySystem\IdentityUser;
 
 Autoloader::init();
 
 
-$dbName = "assss";
+$dbName = "SoftUniProject";
 
-\codeFirstModelBuilder\system::databaseBuilder($dbName);
+\IdentitySystem\codeFirstModelBuilder\system::databaseBuilder($dbName);
 
 Core\Database::setInstance(
     \Config\DatabaseConfig::DB_INSTANCE,
@@ -35,7 +35,9 @@ Core\Database::setInstance(
 );
 
 
-\codeFirstModelBuilder\system::createIdentityTables();
+\IdentitySystem\codeFirstModelBuilder\system::createIdentityTables();
+
+
 
 include_once "app.php";
 
