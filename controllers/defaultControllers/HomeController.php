@@ -22,7 +22,7 @@ class HomeController
 
 
             $registeredUserInfo = $user->UserLogin('admin','admin');
-            $user->UserLogout('admin');
+//            $user->UserLogout('admin');
 
 
         return View::make();

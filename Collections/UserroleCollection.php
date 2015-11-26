@@ -2,12 +2,12 @@
 
 namespace Collections;
 
-use SoftUni\Models\User;
+use SoftUni\Models\Userrole;
 
-class UserCollection
+class UserroleCollection
 {
     /**
-     * @var User[];
+     * @var Userrole[];
      */
     private $collection = [];
 

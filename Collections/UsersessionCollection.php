@@ -2,12 +2,12 @@
 
 namespace Collections;
 
-use SoftUni\Models\User;
+use SoftUni\Models\Usersession;
 
-class UserCollection
+class UsersessionCollection
 {
     /**
-     * @var User[];
+     * @var Usersession[];
      */
     private $collection = [];
 

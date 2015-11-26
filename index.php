@@ -37,6 +37,9 @@ Core\Database::setInstance(
 
 \IdentitySystem\codeFirstModelBuilder\system::createIdentityTables();
 
+$dbFirstModelBuilder = new dbFirstModelBuilder\dbFirstModelBuilder();
+
+$dbFirstModelBuilder->createdbFirstModels();
 
 
 include_once "app.php";
