@@ -2,10 +2,10 @@
 namespace SoftUni\Repositories;
 
 use SoftUni\Core\Database;
-use SoftUni\Models\Role;
-use SoftUni\Collections\RoleCollection;
+use SoftUni\Models\Sometesttable;
+use SoftUni\Collections\SometesttableCollection;
 
-class RolesRepository
+class SometesttableRepository
 {
     private $query;
 
@@ -19,14 +19,14 @@ class RolesRepository
     private static $insertObjectPool = [];
 
     /**
-     * @var RolesRepository
+     * @var SometesttableRepository
      */
     private static $inst = null;
 
     private function __construct() { }
 
     /**
-     * @return RolesRepository
+     * @return SometesttableRepository
      */
     public static function create()
     {
@@ -49,13 +49,13 @@ class RolesRepository
         return $this;
     }
     /**
-     * @param $Rolename
+     * @param $name
      * @return $this
      */
-    public function filterByRolename($Rolename)
+    public function filterByName($name)
     {
-        $this->where .= " AND Rolename = ?";
-        $this->placeholders[] = $Rolename;
+        $this->where .= " AND name = ?";
+        $this->placeholders[] = $name;
 
         return $this;
     }
@@ -141,42 +141,42 @@ class RolesRepository
     }
 
     /**
-     * @return RoleCollection
+     * @return SometesttableCollection
      * @throws \Exception
      */
     public function findAll()
     {
         $db = Database::getInstance('app');
 
-        $this->query = "SELECT * FROM roles" . $this->where . $this->order;
+        $this->query = "SELECT * FROM sometesttable" . $this->where . $this->order;
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
 
         $collection = [];
         foreach ($result->fetchAll() as $entityInfo) {
-            $entity = new Role($entityInfo['Rolename'],
+            $entity = new Sometesttable($entityInfo['name'],
 $entityInfo['id']);
 
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;
         }
 
-        return new RoleCollection($collection);
+        return new SometesttableCollection($collection);
     }
 
     /**
-     * @return Role
+     * @return Sometesttable
      * @throws \Exception
      */
     public function findOne()
     {
         $db = Database::getInstance('app');
 
-        $this->query = "SELECT * FROM roles" . $this->where . $this->order . " LIMIT 1";
+        $this->query = "SELECT * FROM sometesttable" . $this->where . $this->order . " LIMIT 1";
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         $entityInfo = $result->fetch();
-        $entity = new Role($entityInfo['Rolename'],
+        $entity = new Sometesttable($entityInfo['name'],
 $entityInfo['id']);
 
         self::$selectedObjectPool[] = $entity;
@@ -192,14 +192,14 @@ $entityInfo['id']);
     {
         $db = Database::getInstance('app');
 
-        $this->query = "DELETE FROM roles" . $this->where;
+        $this->query = "DELETE FROM sometesttable" . $this->where;
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
 
         return $result->rowCount() > 0;
     }
 
-    public static function add(Role $model)
+    public static function add(Sometesttable $model)
     {
         if ($model->getId()) {
             throw new \Exception('This entity is not new');
@@ -221,29 +221,29 @@ $entityInfo['id']);
         return true;
     }
 
-    private static function update(Role $model)
+    private static function update(Sometesttable $model)
     {
         $db = Database::getInstance('app');
 
-        $query = "UPDATE roles SET Rolename= :Rolename WHERE id = :id";
+        $query = "UPDATE sometesttable SET name= :name WHERE id = :id";
         $result = $db->prepare($query);
         $result->execute(
             [
                 ':id' => $model->getId(),
-':Rolename' => $model->getRolename()
+':name' => $model->getName()
             ]
         );
     }
 
-    private static function insert(Role $model)
+    private static function insert(Sometesttable $model)
     {
         $db = Database::getInstance('app');
 
-        $query = "INSERT INTO users (Rolename) VALUES (:Rolename);";
+        $query = "INSERT INTO users (name) VALUES (:name);";
         $result = $db->prepare($query);
         $result->execute(
             [
-                ':Rolename' => $model->getRolename()
+                ':name' => $model->getName()
             ]
         );
         $model->setId($db->lastId());
@@ -251,7 +251,7 @@ $entityInfo['id']);
 
     private function isColumnAllowed($column)
     {
-        $refc = new \ReflectionClass('\SoftUni\Role');
+        $refc = new \ReflectionClass('\SoftUni\Sometesttable');
         $consts = $refc->getConstants();
 
         return in_array($column, $consts);

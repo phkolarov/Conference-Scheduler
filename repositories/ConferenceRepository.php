@@ -2,10 +2,10 @@
 namespace SoftUni\Repositories;
 
 use SoftUni\Core\Database;
-use SoftUni\Models\Userrole;
-use SoftUni\Collections\UserroleCollection;
+use SoftUni\Models\Conference;
+use SoftUni\Collections\ConferenceCollection;
 
-class UserroleRepository
+class ConferenceRepository
 {
     private $query;
 
@@ -19,14 +19,14 @@ class UserroleRepository
     private static $insertObjectPool = [];
 
     /**
-     * @var UserroleRepository
+     * @var ConferenceRepository
      */
     private static $inst = null;
 
     private function __construct() { }
 
     /**
-     * @return UserroleRepository
+     * @return ConferenceRepository
      */
     public static function create()
     {
@@ -49,24 +49,57 @@ class UserroleRepository
         return $this;
     }
     /**
-     * @param $userid
+     * @param $name
      * @return $this
      */
-    public function filterByUserid($userid)
+    public function filterByName($name)
     {
-        $this->where .= " AND userid = ?";
-        $this->placeholders[] = $userid;
+        $this->where .= " AND name = ?";
+        $this->placeholders[] = $name;
 
         return $this;
     }
     /**
-     * @param $roleid
+     * @param $date
      * @return $this
      */
-    public function filterByRoleid($roleid)
+    public function filterByDate($date)
     {
-        $this->where .= " AND roleid = ?";
-        $this->placeholders[] = $roleid;
+        $this->where .= " AND date = ?";
+        $this->placeholders[] = $date;
+
+        return $this;
+    }
+    /**
+     * @param $hall_id
+     * @return $this
+     */
+    public function filterByHall_id($hall_id)
+    {
+        $this->where .= " AND hall_id = ?";
+        $this->placeholders[] = $hall_id;
+
+        return $this;
+    }
+    /**
+     * @param $break1
+     * @return $this
+     */
+    public function filterByBreak1($break1)
+    {
+        $this->where .= " AND break1 = ?";
+        $this->placeholders[] = $break1;
+
+        return $this;
+    }
+    /**
+     * @param $break2
+     * @return $this
+     */
+    public function filterByBreak2($break2)
+    {
+        $this->where .= " AND break2 = ?";
+        $this->placeholders[] = $break2;
 
         return $this;
     }
@@ -152,44 +185,50 @@ class UserroleRepository
     }
 
     /**
-     * @return UserroleCollection
+     * @return ConferenceCollection
      * @throws \Exception
      */
     public function findAll()
     {
         $db = Database::getInstance('app');
 
-        $this->query = "SELECT * FROM userrole" . $this->where . $this->order;
+        $this->query = "SELECT * FROM conference" . $this->where . $this->order;
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
 
         $collection = [];
         foreach ($result->fetchAll() as $entityInfo) {
-            $entity = new Userrole($entityInfo['userid'],
-$entityInfo['roleid'],
+            $entity = new Conference($entityInfo['name'],
+$entityInfo['date'],
+$entityInfo['hall_id'],
+$entityInfo['break1'],
+$entityInfo['break2'],
 $entityInfo['id']);
 
             $collection[] = $entity;
             self::$selectedObjectPool[] = $entity;
         }
 
-        return new UserroleCollection($collection);
+        return new ConferenceCollection($collection);
     }
 
     /**
-     * @return Userrole
+     * @return Conference
      * @throws \Exception
      */
     public function findOne()
     {
         $db = Database::getInstance('app');
 
-        $this->query = "SELECT * FROM userrole" . $this->where . $this->order . " LIMIT 1";
+        $this->query = "SELECT * FROM conference" . $this->where . $this->order . " LIMIT 1";
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
         $entityInfo = $result->fetch();
-        $entity = new Userrole($entityInfo['userid'],
-$entityInfo['roleid'],
+        $entity = new Conference($entityInfo['name'],
+$entityInfo['date'],
+$entityInfo['hall_id'],
+$entityInfo['break1'],
+$entityInfo['break2'],
 $entityInfo['id']);
 
         self::$selectedObjectPool[] = $entity;
@@ -205,14 +244,14 @@ $entityInfo['id']);
     {
         $db = Database::getInstance('app');
 
-        $this->query = "DELETE FROM userrole" . $this->where;
+        $this->query = "DELETE FROM conference" . $this->where;
         $result = $db->prepare($this->query);
         $result->execute($this->placeholders);
 
         return $result->rowCount() > 0;
     }
 
-    public static function add(Userrole $model)
+    public static function add(Conference $model)
     {
         if ($model->getId()) {
             throw new \Exception('This entity is not new');
@@ -234,31 +273,37 @@ $entityInfo['id']);
         return true;
     }
 
-    private static function update(Userrole $model)
+    private static function update(Conference $model)
     {
         $db = Database::getInstance('app');
 
-        $query = "UPDATE userrole SET userid= :userid, roleid= :roleid WHERE id = :id";
+        $query = "UPDATE conference SET name= :name, date= :date, hall_id= :hall_id, break1= :break1, break2= :break2 WHERE id = :id";
         $result = $db->prepare($query);
         $result->execute(
             [
                 ':id' => $model->getId(),
-':userid' => $model->getUserid(),
-':roleid' => $model->getRoleid()
+':name' => $model->getName(),
+':date' => $model->getDate(),
+':hall_id' => $model->getHall_id(),
+':break1' => $model->getBreak1(),
+':break2' => $model->getBreak2()
             ]
         );
     }
 
-    private static function insert(Userrole $model)
+    private static function insert(Conference $model)
     {
         $db = Database::getInstance('app');
 
-        $query = "INSERT INTO users (userid,roleid) VALUES (:userid, :roleid);";
+        $query = "INSERT INTO users (name,date,hall_id,break1,break2) VALUES (:name, :date, :hall_id, :break1, :break2);";
         $result = $db->prepare($query);
         $result->execute(
             [
-                ':userid' => $model->getUserid(),
-':roleid' => $model->getRoleid()
+                ':name' => $model->getName(),
+':date' => $model->getDate(),
+':hall_id' => $model->getHall_id(),
+':break1' => $model->getBreak1(),
+':break2' => $model->getBreak2()
             ]
         );
         $model->setId($db->lastId());
@@ -266,7 +311,7 @@ $entityInfo['id']);
 
     private function isColumnAllowed($column)
     {
-        $refc = new \ReflectionClass('\SoftUni\Userrole');
+        $refc = new \ReflectionClass('\SoftUni\Conference');
         $consts = $refc->getConstants();
 
         return in_array($column, $consts);

@@ -18,43 +18,47 @@ public static function createdbFirstModels(){
     $tables= array_map(function($t) { return $t[0]; },
         $pdo->query("SHOW TABLES")->fetchAll(PDO::FETCH_NUM));
 
-    var_dump($tables);
+    $skippedTables = ['users', 'roles','userrole','usersessions'];
 
 
 
     foreach ($tables as $tableName) {
 
-        $columns =
-            array_map(function($c) { return $c['Field']; },
-                $pdo->query("SHOW COLUMNS FROM $tableName")->fetchAll(PDO::FETCH_ASSOC));
+        if(!in_array($tableName,$skippedTables)){
 
-        $repositoryNameSplitted = explode("_", $tableName);
-        for ($i = 0; $i < count($repositoryNameSplitted); $i++) {
-            $repositoryNameSplitted[$i] = ucfirst($repositoryNameSplitted[$i]);
+            $columns =
+                array_map(function($c) { return $c['Field']; },
+                    $pdo->query("SHOW COLUMNS FROM $tableName")->fetchAll(PDO::FETCH_ASSOC));
+
+            $repositoryNameSplitted = explode("_", $tableName);
+            for ($i = 0; $i < count($repositoryNameSplitted); $i++) {
+                $repositoryNameSplitted[$i] = ucfirst($repositoryNameSplitted[$i]);
+            }
+            $repositoryName = implode("", $repositoryNameSplitted);
+
+            $model = $repositoryName[strlen($repositoryName) - 1] == 's' ? substr($repositoryName, 0, strlen($repositoryName) - 1) : $repositoryName;
+
+            $repositoryName .= "Repository";
+
+            d($repositoryName);
+
+            createRepositories($repositoryName, $model, $tableName, $columns);
+
+            $output = "";
+            $output .= self::generateClassInfo($model);
+            $output .= self::generateConstants($model, $tableName, $columns);
+            $output .= self::generateFields($model, $tableName, $columns);
+            $output .= self::generateConstructor($model, $tableName, $columns);
+            $output .= self::generateGettersAndSetters($model, $tableName, $columns);
+            $output .= "}";
+            $modelFile = fopen("Models/" . $model . '.php', 'w');
+            fwrite($modelFile, $output);
+
+            $collectionsOutput = create_collection($model);
+            $collectionFile = fopen('Collections/' . $model . 'Collection.php', 'w');
+            fwrite($collectionFile, $collectionsOutput);
         }
-        $repositoryName = implode("", $repositoryNameSplitted);
 
-        $model = $repositoryName[strlen($repositoryName) - 1] == 's' ? substr($repositoryName, 0, strlen($repositoryName) - 1) : $repositoryName;
-
-        $repositoryName .= "Repository";
-
-        d($repositoryName);
-
-        createRepositories($repositoryName, $model, $tableName, $columns);
-
-        $output = "";
-        $output .= self::generateClassInfo($model);
-        $output .= self::generateConstants($model, $tableName, $columns);
-        $output .= self::generateFields($model, $tableName, $columns);
-        $output .= self::generateConstructor($model, $tableName, $columns);
-        $output .= self::generateGettersAndSetters($model, $tableName, $columns);
-        $output .= "}";
-        $modelFile = fopen("Models/" . $model . '.php', 'w');
-        fwrite($modelFile, $output);
-
-        $collectionsOutput = create_collection($model);
-        $collectionFile = fopen('Collections/' . $model . 'Collection.php', 'w');
-        fwrite($collectionFile, $collectionsOutput);
     }
 
 
